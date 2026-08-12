@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #14213D;
+  --color-ink-subtle: #2B3A5A;
+  --color-ink-muted: #5C6A85;
+  --color-paper: #FAF9F6;
+  --color-paper-card: #FFFFFF;
+  --color-brass: #B08D57;
+  --color-brass-light: #F7F3EC;
+  --color-brass-border: #E5D7C2;
+  --color-signal: #3D5A80;
+  --color-signal-hover: #2E4563;
+  --color-signal-light: #F0F4F8;
+  --color-signal-border: #C8D6E5;
+  --color-coral: #E8734A;
+  --color-coral-light: #FDF2EE;
+  --color-coral-border: #F7C8B8;
+  --color-mist: #E4E7EB;
+  --color-mist-subtle: #F3F5F7;
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  --radius-card: 20px;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+    letter-spacing: -0.015em;
+  }
+
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+
+  /* Universal Focus States for Accessibility */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    outline: 2px solid var(--color-signal);
+    outline-offset: 2px;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
